@@ -50,17 +50,9 @@
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="TeleBot, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\TeleSharp.1.0.5\lib\TeleBot.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Telegram.Bot, Version=9.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Telegram.Bot.9.0.0\lib\net45\Telegram.Bot.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="TLSharp.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\WindowsFormsApplication1\bin\Debug\TLSharp.Core.dll</HintPath>
+      <HintPath>..\TLSharp.Core.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Choose>
