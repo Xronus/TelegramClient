@@ -12,15 +12,16 @@ namespace TelegramClientTest
     public class UnitTest1
     {
         private string UserNameToSendMessage { get; set; }
-        private string NumberToSendMessage = "*"; 
-        private string NumberToAuthenticate = "*";
-        private string apiHash = "*";
+        private string NumberToSendMessage = "з"; 
+        private string NumberToAuthenticate = "з";
+        private string apiHash = "з";
      
-        private int apiId = 28213;
+        private int apiId = 41075;
 
         [TestMethod]
         public async Task TestMethod1()
         {
+
             var store = new FileSessionStore();
             var client = new TelegramClient(store, "session", apiId, apiHash);  //завести аккаунт https://my.telegram.org/auth взять API_ID(48047) и API_HASH
 
@@ -28,7 +29,7 @@ namespace TelegramClientTest
 
             var hash = await client.SendCodeRequest(NumberToAuthenticate); //номер телефона с которого отправляем сообщение
 
-            var code = "64628"; // вставляем сюда проверочный код пришедший на телефон
+            var code = "43441"; // вставляем сюда проверочный код пришедший на телефон
 
             var user = await client.MakeAuth(NumberToAuthenticate, hash, code); // авторизируемся
 
@@ -42,7 +43,7 @@ namespace TelegramClientTest
         {
             var store = new FileSessionStore();
             var client = new TelegramClient(store, "session", apiId, apiHash);
-            //apiIdclient = ((TLSharp.Core.MTProto.UserSelfConstructor)client._sender._session.User).id;
+            
             await client.Connect();
 
             Assert.IsTrue(client.IsUserAuthorized());
@@ -50,7 +51,7 @@ namespace TelegramClientTest
             var res = await client.ImportContactByPhoneNumber(NumberToSendMessage);
 
             Assert.IsNotNull(res);
-            var sms = "Привет!!!!";
+            var sms = "Привет";
             await client.SendMessage(res.Value, sms);
         }
 
