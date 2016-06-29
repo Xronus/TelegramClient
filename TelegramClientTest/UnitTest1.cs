@@ -12,9 +12,11 @@ namespace TelegramClientTest
     public class UnitTest1
     {
         private string UserNameToSendMessage { get; set; }
-        private string NumberToSendMessage = "з"; 
-        private string NumberToAuthenticate = "з";
-        private string apiHash = "з";
+        private string NumberToSendMessage = "89151232302";
+        ///89161000672
+        ///89151232302
+        private string NumberToAuthenticate = "79257680013";
+        private string apiHash = "e94f967ac95b8c0b616404688a872d6a";
      
         private int apiId = 41075;
 
@@ -51,7 +53,7 @@ namespace TelegramClientTest
             var res = await client.ImportContactByPhoneNumber(NumberToSendMessage);
 
             Assert.IsNotNull(res);
-            var sms = "Привет";
+            var sms = "Проверка";
             await client.SendMessage(res.Value, sms);
         }
 
